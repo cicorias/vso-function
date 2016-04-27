@@ -1,0 +1,26 @@
+{
+  "bindings": [
+    {
+      "queueName": "gitstatusupdates",
+      "connection": "function91d91f8c9e6b_STORAGE",
+      "name": "message",
+      "type": "queueTrigger",
+      "direction": "in"
+    },
+    {
+      "databaseName": "vsohelper",
+      "collectionName": "gitevents",
+      "id": "fcc2e505-36aa-4779-8749-da5d42aea64a",
+      "connection": "scicoria_DOCUMENTDB",
+      "name": "inputDocument",
+      "type": "documentdb",
+      "direction": "in"
+    },
+    {
+      "name": "res",
+      "type": "http",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
