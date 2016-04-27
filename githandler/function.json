@@ -1,12 +1,29 @@
 {
   "bindings": [
     {
+      "webHookType": "github",
       "type": "httpTrigger",
-      "direction": "in",
-      "webHookType": "github"
+      "direction": "in"
     },
     {
+      "databaseName": "vsohelper",
+      "collectionName": "gitevents",
+      "createIfNotExists": false,
+      "connection": "scicoria_DOCUMENTDB",
+      "name": "store",
+      "type": "documentdb",
+      "direction": "out"
+    },
+    {
+      "name": "res",
       "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "queueout",
+      "type": "queue",
+      "queueName": "gitstatusupdates",
+      "connection": "function91d91f8c9e6b_STORAGE",
       "direction": "out"
     }
   ]
